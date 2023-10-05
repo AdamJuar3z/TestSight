@@ -5,14 +5,14 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         //Scanner scanner = new Scanner(System.in);
-        Scanner scanner = new Scanner(System.in):
+        Scanner scanner = new Scanner(System.in);
         //System.out.println("Enter the first number; ");
         System.out.println("Enter first name here.");
         //double firstNumber = scanner.nextDouble();
         double firstNumber = scanner.nextDouble();
         //System.out.println("Enter the second number. ");
         System.out.println("Enter second number.");
-        
+
         double secondNumber = scanner.nextDouble();
         System.out.println("Possible calculations: (A)dd, (S)ubtract, (M)ultiply, (D)ivide");
         System.out.println("Please select an option:");

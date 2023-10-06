@@ -24,16 +24,16 @@ public class Main {
         boolean roadAssistance = scanner.nextBoolean();
 
         double userCostMinDay = 29.99 * rentalDays;
-        if (withTollTag){
+        if (withTollTag) {
             userCostMinDay += 3.95 * rentalDays;
         }
-        if (withGps){
+        if (withGps) {
             userCostMinDay += 2.95 * rentalDays;
         }
-        if (roadAssistance){
+        if (roadAssistance) {
             userCostMinDay += 3.95 * rentalDays;
         }
-        if (withAge < 25){
+        if (withAge < 25) {
             userCostMinDay *= 1.3;
         }
         System.out.println("Date of pick up. " + userDate);
@@ -62,5 +62,5 @@ public class Main {
         //12. See if they are under 25, if they are, multiply the total cost by 1.3 if they are 25 or over, do nothing
         //13.Show the basic car rental, options cost, underage driver surcharge, and total cost
 
-    }
+    }}
 

@@ -7,7 +7,7 @@ public class Main {
         //Scanner scanner = new Scanner(System.in);
         Scanner scanner = new Scanner(System.in);
         //System.out.println("Enter the first number; ");
-        System.out.println("Enter first name here.");
+        System.out.println("Enter first number here.");
         //double firstNumber = scanner.nextDouble();
         double firstNumber = scanner.nextDouble();
         //System.out.println("Enter the second number. ");
@@ -40,6 +40,7 @@ public class Main {
             double result = firstNumber / secondNumber;
                 System.out.printf("%.2f / %.2f = %.2f");
             }
+
 
 
         }

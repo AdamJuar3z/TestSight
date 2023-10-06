@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("How's the weather today? Sunny? Cloudy? Rainy? ");
-        String mySunny = "Sunny";
+        String mySunny = "Sunny;
         String myCloudy = "Cloudy";
         String myRainy = "Rainy";
         String anyElse = "Else";

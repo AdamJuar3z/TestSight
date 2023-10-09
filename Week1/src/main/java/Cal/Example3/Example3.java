@@ -5,25 +5,35 @@ import java.util.Scanner;
 public class Example3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-// MPO stands for Monthly Pay Value
-        System.out.println("Welcome to the present value calculator!");
-        System.out.println("Please enter present value.");
-        double userMPV = scanner.nextDouble();
-// AIR stands for Annual Interest rate
-        System.out.println("Please enter the interest.");
-        double userAIR = scanner.nextDouble();
-// NOY stands for Number Of Years
-        System.out.println("Please enter the number of years.");
-        double userNOY = scanner.nextDouble();
 
-        double monthlyInterestRate = (1 + (userAIR / 365));
-        double totalPayments = 365  * userNOY;
 
-        double presentValue = userMPV * Math.pow(monthlyInterestRate, totalPayments);
+        double amount;
+        double priciple;
+        double rate;
+        double time;
 
-        System.out.println(presentValue);
+        System.out.println("Pleae enter the monthly payout amount below: ");
+        priciple = scanner.nextDouble();
 
-    }}
+        System.out.println("Please enter the amount of years you'd like: ");
+        time = scanner.nextDouble();
+
+        System.out.println("Please enter interest rate you'd like: ");
+        rate = scanner.nextDouble();
+
+        amount = priciple ((1 + time / 100 ), rate);
+
+        System.out.printf("To fund an annuity that pays %.2f monthly for %.2f years and earns an expected %.2f interest, you would need to invest %.2f today.", priciple, time, rate, amount);
+
+
+
+
+
+
+
+    }
+
+}
 
 
 

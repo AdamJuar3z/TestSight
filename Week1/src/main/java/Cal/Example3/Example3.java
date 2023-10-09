@@ -21,8 +21,8 @@ public class Example3 {
         System.out.println("Please enter interest rate you'd like: ");
         rate = scanner.nextDouble();
 
-        amount = priciple ((1 + time / 100 ), rate);
-
+        amount = priciple * Math.pow((1 + time / 100 ), rate * 12);
+        
         System.out.printf("To fund an annuity that pays %.2f monthly for %.2f years and earns an expected %.2f interest, you would need to invest %.2f today.", priciple, time, rate, amount);
 
 

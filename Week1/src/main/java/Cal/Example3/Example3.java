@@ -6,33 +6,30 @@ public class Example3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.print("Enter principal amount bellow: ");
+        double p = scanner.nextDouble();
 
-        double amount;
-        double priciple;
-        double rate;
-        double time;
+        System.out.print("Enter annual interest rate: ");
+        double r = scanner.nextDouble();
 
-        System.out.println("Pleae enter the monthly payout amount below: ");
-        priciple = scanner.nextDouble();
+        System.out.println("Enter compound interest: ");
+        int cI = scanner.nextInt();
 
-        System.out.println("Please enter the amount of years you'd like: ");
-        time = scanner.nextDouble();
+        System.out.print("Enter time period in years: ");
+        int y = scanner.nextInt();
 
-        System.out.println("Please enter interest rate you'd like: ");
-        rate = scanner.nextDouble();
+        // A = P(1 + r/n)(n)(t):
 
-        amount = priciple * Math.pow((1 + time / 100 ), rate * 12);
+// A = 10,000.00(1 + 0.03875/12)(12)(7.5) == a(p + i) = p(1 + ( r
+        double iR = r / 100;
+        double amount = p * Math.pow((1 + (iR / cI)),
+                (cI * y));
 
-        System.out.printf("To fund an annuity that pays %.2f monthly for %.2f years and earns an expected %.2f interest, you would need to invest %.2f today.", priciple, time, rate, amount);
-
-
-
-
+        System.out.printf("After %d years, your investment will grow to: $%.2f\n", y, amount);
 
 
-
+        scanner.close();
     }
-
 }
 
 

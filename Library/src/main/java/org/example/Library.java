@@ -7,7 +7,6 @@ public class Library {
     public static void main(String[] args) {
         Book[] inventory = new Book[20];
 
-
         inventory[0] = new Book(1, "000-0-00-00000-0", "Book One");
         inventory[1] = new Book(2, "000-0-00-00000-1", "Book Two");
         inventory[2] = new Book(3, "000-0-00-00000-2", "Book Three");
@@ -86,7 +85,7 @@ public class Library {
                         ", Checked Out To: " + book.getCheckedOutTo());
             }
         }
-        System.out.println("Enter 'C' to check out a book, or 'X' to go back to the home screen:");
+        System.out.println("Enter 'C' to check in a book, or 'X' to go back to the home screen:");
         String input = scanner.nextLine();
         if (input.equalsIgnoreCase("C")) {
             System.out.println("Enter the ID of the book to check in:");

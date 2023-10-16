@@ -18,6 +18,10 @@ public class Book {
         this.checkedOutTo = "";
     }
 
+    public void setCheckedOut(boolean checkedOut) {
+        isCheckedOut = checkedOut;
+    }
+
     public int getId() {
         return id;
     }

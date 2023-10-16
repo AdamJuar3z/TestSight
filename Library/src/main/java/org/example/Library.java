@@ -35,25 +35,30 @@ public class Library {
 
         while (true) {
             System.out.println("Store Home Screen:");
-            System.out.println("1. Show Available Books");
-            System.out.println("2. Show Checked Out Books");
-            System.out.println("3. Exit");
+            System.out.println("1) Show Available Books");
+            System.out.println("2) Show Checked Out Books");
+            System.out.println("3) Exit");
             System.out.print("Enter your choice: ");
 
-            int choice = Integer.parseInt(scanner.nextLine());
-            switch (choice) {
-                case 1:
-                    showAvailableBooks(inventory);
-                    break;
-                case 2:
-                    showCheckedOutBooks(inventory);
-                    break;
-                case 3:
-                    System.out.println("Exiting the Book Store. Goodbye!");
-                    System.exit(0);
-                    break;
-                default:
-                    System.out.println("Invalid choice. Please try again.");
+            try {
+                int choice = Integer.parseInt(scanner.nextLine());
+
+                switch (choice) {
+                    case 1:
+                        showAvailableBooks(inventory);
+                        break;
+                    case 2:
+                        showCheckedOutBooks(inventory);
+                        break;
+                    case 3:
+                        System.out.println("Exiting the Book Store. Goodbye!");
+                        System.exit(0);
+                        break;
+                    default:
+                        System.out.println("Invalid choice. Please try again.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a number.");
             }
         }
     }
@@ -93,7 +98,7 @@ public class Library {
             checkInBook(bookId, inventory);
         }
     }
-        public static void checkOutBook (int bookId, Book[] inventory){
+    public static void checkOutBook (int bookId, Book[] inventory){
         Scanner scanner = new Scanner(System.in);
             for (Book book : inventory) {
                 if (book != null && book.getId() == bookId && !book.isCheckedOut()) {
@@ -106,10 +111,12 @@ public class Library {
             }
             System.out.println("Invalid book ID or the book is already checked out.");
         }
-        public static void checkInBook ( int bookId, Book[] inventory){
+    public static void checkInBook ( int bookId, Book[] inventory){
             for (Book book : inventory) {
                 if (book != null && book.getId() == bookId && book.isCheckedOut()) {
                     System.out.println("Book checked in successfully!");
+                    book.setCheckedOutTo(null);
+                    book.setCheckedOut(false);
                     return;
                 }
             }

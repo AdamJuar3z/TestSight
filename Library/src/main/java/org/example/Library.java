@@ -3,6 +3,13 @@ package org.example;
 import java.util.Scanner;
 
 import java.util.Scanner;
+
+/*
+Overall, really good job Adam! You took repetitive code and put it in methods which made this code
+very readable. It works great, and you handled edge cases like the user asking for a book that
+you don't carry or is already checked out, and you can't check a book in that isn't already checked out
+and who's id we carry. Nice!
+ */
 public class Library {
     public static void main(String[] args) {
         Book[] inventory = new Book[20];
@@ -42,7 +49,7 @@ public class Library {
 
             try {
                 int choice = Integer.parseInt(scanner.nextLine());
-
+                //I like how you broke these down into methods rather than sticking all the logic in here
                 switch (choice) {
                     case 1:
                         showAvailableBooks(inventory);
@@ -67,6 +74,7 @@ public class Library {
         System.out.println("Available Books:");
         for (Book book : inventory) {
             if (book != null && !book.isCheckedOut()) {
+                //You could consider using printf here.
                 System.out.println("ID: " + book.getId() +
                         ", ISBN: " + book.getIsbn() +
                         ", Title: " + book.getTitle());
@@ -84,6 +92,7 @@ public class Library {
         System.out.println("Checked Out Books:");
         for (Book book : inventory) {
             if (book != null && book.isCheckedOut()) {
+                //Printf here too
                 System.out.println("ID: " + book.getId() +
                         ", ISBN: " + book.getIsbn() +
                         ", Title: " + book.getTitle() +

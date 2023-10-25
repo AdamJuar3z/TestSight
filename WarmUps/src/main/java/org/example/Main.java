@@ -3,15 +3,17 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 
 
-public class Main {
+/*public class Main {
     public static void main(String[] args) {
-        int x = 50;
-        if (x = 50) {
-            System.out.println("x is equal to 50");
+        int x = 50;*/
+        //if (x = 50) {/*
+          /*  System.out.println("x is equal to 50");
         } else {
             System.out.println("x is not equal to 50");
         }
     }
+}
+*/
 /*    public static void main(String[] args) {
        // int[] numbers = {2,4,1,3,5};
        Arrays.sort(numbers);

@@ -1,6 +1,7 @@
 package org.example;
 
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -10,7 +11,7 @@ import static org.example.Transactions.makePayment;
 import static org.example.Transactions.showLedger;
 
 public class Accounting {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
         HashMap<String, ArrayList<Transactions>> ledger = new HashMap<>();
 

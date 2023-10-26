@@ -1,4 +1,8 @@
 package org.example;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -80,6 +84,7 @@ public class Transactions {
          int choice = scanner.nextInt();
          scanner.nextLine();
 
+
          switch (choice) {
             case 1:
                printTransactions(ledger);
@@ -98,6 +103,7 @@ public class Transactions {
             default:
                System.out.println("Invalid choice. Please try again.");
          }
+
       }
    }
 

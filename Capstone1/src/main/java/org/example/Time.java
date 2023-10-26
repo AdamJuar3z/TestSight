@@ -13,7 +13,7 @@ public class Time {
         for (String customer : mtd.keySet()) {
             System.out.println("Transactions for " + customer + ":");
             for (Transactions transaction : mtd.get(customer)) {
-                int transactionMonth = Integer.parseInt(transaction.date.split("/")[0]);
+                double transactionMonth = Double.parseDouble(transaction.date.split("/")[0]);
 
                 if (transactionMonth == currentMonth) {
                     System.out.println("Type: " + transaction.type + ", Amount: $" + transaction.amount +

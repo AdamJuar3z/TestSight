@@ -40,7 +40,7 @@ public class Deposit {
         System.out.println("Enter a description: ");
         description = scanner.nextLine();
 
-        System.out.println("Enter a date: (MM/DD/YY) ");
+        System.out.println("Enter a date: (YYYY-MM-DD) ");
         date = scanner.nextLine();
 
         System.out.println("Enter a time: ");

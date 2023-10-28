@@ -6,14 +6,14 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Time {
-    public static void monthToDate(HashMap<String, ArrayList<Transactions>> mtd) {
+    public static void monthToDate(HashMap<String, ArrayList<Transactions>> ledger ) {
         Calendar calendar = Calendar.getInstance();
         int currentMonth = calendar.get(Calendar.MONTH) + 1;
 
-        for (String customer : mtd.keySet()) {
+        for (String customer : ledger.keySet()) {
             System.out.println("Transactions for " + customer + ":");
-            for (Transactions transaction : mtd.get(customer)) {
-                double transactionMonth = Double.parseDouble(transaction.date.split("/")[0]);
+            for (Transactions transaction : ledger.get(customer)) {
+                double transactionMonth = Double.parseDouble(transaction.date.split("-")[2]);
 
                 if (transactionMonth == currentMonth) {
                     System.out.println("Type: " + transaction.type + ", Amount: $" + transaction.amount +
@@ -25,16 +25,16 @@ public class Time {
         }
     }
 
-    public static void previousMonth(HashMap<String, ArrayList<Transactions>> pm){
+    public static void previousMonth(HashMap<String, ArrayList<Transactions>> ledger){
         Calendar calendar = Calendar.getInstance();
         int currentMonth = calendar.get(Calendar.MONTH) + 1;
         int previousMonth = (currentMonth - 1 + 12) % 12;
 
-        for (String customer : pm.keySet()) {
+        for (String customer : ledger.keySet()) {
             System.out.println("Previous Month Transactions for " + customer + ":");
-            for (Transactions transaction : pm.get(customer)) {
+            for (Transactions transaction : ledger.get(customer)) {
 
-                int transactionMonth = Integer.parseInt(transaction.date.split("/")[0]);
+                int transactionMonth = Integer.parseInt(transaction.date.split("-")[2]);
 
                 if (transactionMonth == previousMonth) {
                     System.out.println("Type: " + transaction.type + ", Amount: $" + transaction.amount +
@@ -45,15 +45,15 @@ public class Time {
             }
         }
     }
-    public static void yearToDate(HashMap<String, ArrayList<Transactions>> ytd) {
+    public static void yearToDate(HashMap<String, ArrayList<Transactions>> ledger) {
         Calendar calendar = Calendar.getInstance();
         int currentYear = calendar.get(Calendar.YEAR);
 
-        for (String customer : ytd.keySet()) {
+        for (String customer : ledger.keySet()) {
             System.out.println("Year to Date Transactions for " + customer + ":");
-            for (Transactions transaction : ytd.get(customer)) {
+            for (Transactions transaction : ledger.get(customer)) {
 
-                int transactionYear = Integer.parseInt(transaction.date.split("/")[2]);
+                int transactionYear = Integer.parseInt(transaction.date.split("-")[2]);
 
                 if (transactionYear == currentYear) {
                     System.out.println("Type: " + transaction.type + ", Amount: $" + transaction.amount +
@@ -64,14 +64,14 @@ public class Time {
             }
         }
     }
-    public static void previousYear(HashMap<String, ArrayList<Transactions>> py) {
+    public static void previousYear(HashMap<String, ArrayList<Transactions>> ledger) {
         Calendar calendar = Calendar.getInstance();
         int currentYear = calendar.get(Calendar.YEAR);
 
-        for (String customer : py.keySet()) {
+        for (String customer : ledger.keySet()) {
             System.out.println("Previous Year Transactions for " + customer + ":");
-            for (Transactions transaction : py.get(customer)) {
-                int transactionYear = Integer.parseInt(transaction.date.split("/")[2]);
+            for (Transactions transaction : ledger.get(customer)) {
+                int transactionYear = Integer.parseInt(transaction.date.split("-")[2]);
 
                 if (transactionYear == currentYear - 1) {
                     System.out.println("Type: " + transaction.type + ", Amount: $" + transaction.amount +

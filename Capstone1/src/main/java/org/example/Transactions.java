@@ -1,9 +1,6 @@
 package org.example;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -17,6 +14,7 @@ public class Transactions {
    String date;
    String time;
 
+
    public Transactions(String type, double amount, String description, String date, String time) {
       this.type = type;
       this.amount = amount;
@@ -29,6 +27,8 @@ public class Transactions {
       this.type = type;
       this.amount = amount;
       this.description = description;
+      this.date = LocalDate.now().toString(); // initialize date with current date
+      this.time = LocalTime.now().toString(); // initialize time with current time
    }
 
    public String getType() {
@@ -197,8 +197,3 @@ public class Transactions {
       }
    }
 }
-
-
-
-
-

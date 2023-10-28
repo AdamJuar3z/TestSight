@@ -11,7 +11,7 @@ import static org.example.Transactions.makePayment;
 import static org.example.Transactions.showLedger;
 
 public class Accounting {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws NumberFormatException, IOException {
         Scanner scanner = new Scanner(System.in);
         HashMap<String, ArrayList<Transactions>> ledger = new HashMap<>();
 
@@ -47,7 +47,8 @@ public class Accounting {
 }
 
 
-         // Home screen should have Add Deposit, Make Payment(Debit), Ledger, Exit
+
+// Home screen should have Add Deposit, Make Payment(Debit), Ledger, Exit
         // Under the ledger 1) All, 2) Deposits, 3) Payments, 4) Reports
         // Under 4) Reports, allow user to run a customer search.
         // Customer search 1) Month to Date 2) Previous Month 3) Year to Date 4) previous year 5) Search by Vendor

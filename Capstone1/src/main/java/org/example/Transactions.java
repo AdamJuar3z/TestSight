@@ -160,7 +160,7 @@ public class Transactions {
       }
    }
 
-   public static void makePayment(HashMap<String, ArrayList<Transactions>> mp) {
+   public static void makePayment(HashMap<String, ArrayList<Transactions>> ledger) {
       Scanner scanner = new Scanner(System.in);
       System.out.print("Enter the customer name: ");
       String customerName = scanner.nextLine();
@@ -173,7 +173,7 @@ public class Transactions {
       String description = scanner.nextLine();
 
       Transactions payment = new Transactions("Payment", amount, description);
-      mp.computeIfAbsent(customerName, k -> new ArrayList<>()).add(payment);
+      ledger.computeIfAbsent(customerName, k -> new ArrayList<>()).add(payment);
       System.out.println("Payment made successfully!");
    }
 

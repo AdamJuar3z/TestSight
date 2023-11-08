@@ -44,3 +44,5 @@ null|0.0|null|null|null|AT&T
 2023-10-22|10pm|org.example.Transactions@31befd9f|LOL|0.0
 2023-10-22|10pm|org.example.Transactions@1c20c684|idk|0.0
 2023-10-22|10Pm|org.example.Transactions@1c20c684|AT&T'|0.0
+2023-09-01|11 PM|org.example.Transactions@1c20c684|AT&T|0.0
+2023|20pom|org.example.Transactions@1c20c684|AT&T|0.0

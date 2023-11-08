@@ -13,7 +13,7 @@ public class Time {
         for (String customer : ledger.keySet()) {
             System.out.println("Transactions for " + customer + ":");
             for (Transactions transaction : ledger.get(customer)) {
-                double transactionMonth = Double.parseDouble(transaction.date.split("-")[2]);
+                int transactionMonth = Integer.parseInt(transaction.date.split("/")[1],Integer.parseInt(transaction.date.split("/")[2]));
 
                 if (transactionMonth == currentMonth) {
                     System.out.println("Type: " + transaction.type + ", Amount: $" + transaction.amount +
@@ -34,7 +34,7 @@ public class Time {
             System.out.println("Previous Month Transactions for " + customer + ":");
             for (Transactions transaction : ledger.get(customer)) {
 
-                int transactionMonth = Integer.parseInt(transaction.date.split("-")[2]);
+                int transactionMonth = Integer.parseInt(transaction.date.split("/")[1]);
 
                 if (transactionMonth == previousMonth) {
                     System.out.println("Type: " + transaction.type + ", Amount: $" + transaction.amount +
@@ -53,7 +53,8 @@ public class Time {
             System.out.println("Year to Date Transactions for " + customer + ":");
             for (Transactions transaction : ledger.get(customer)) {
 
-                int transactionYear = Integer.parseInt(transaction.date.split("-")[2]);
+                int transactionYear = Integer.parseInt(transaction.date.split("/")[0],
+                        Integer.parseInt(transaction.date.split("-")[2]));
 
                 if (transactionYear == currentYear) {
                     System.out.println("Type: " + transaction.type + ", Amount: $" + transaction.amount +
@@ -71,7 +72,7 @@ public class Time {
         for (String customer : ledger.keySet()) {
             System.out.println("Previous Year Transactions for " + customer + ":");
             for (Transactions transaction : ledger.get(customer)) {
-                int transactionYear = Integer.parseInt(transaction.date.split("-")[2]);
+                int transactionYear = Integer.parseInt(transaction.date.split("/")[0]);
 
                 if (transactionYear == currentYear - 1) {
                     System.out.println("Type: " + transaction.type + ", Amount: $" + transaction.amount +

@@ -88,6 +88,8 @@ public class Vehicle {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    //Good use of an override here.
     @Override
     public String toString() {
         return "VIN: " + vin +

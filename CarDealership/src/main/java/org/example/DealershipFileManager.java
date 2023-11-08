@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DealershipFileManager {
+    //I -->LIKE<-- this. It should be final.
     private static final String VEHICLE_PATH = "src/main/resources/Vehicle_Inventory.csv";
 
 
@@ -30,6 +31,7 @@ public class DealershipFileManager {
                         int odometer = Integer.parseInt(vehicle[6]);
                         double price = Double.parseDouble(vehicle[7]);
 
+                        //You could try one lining this like new Vehicle(vehicle[0]...) but this is fine too.
                         Vehicle newVehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
                         vehicleList.add(newVehicle);
 

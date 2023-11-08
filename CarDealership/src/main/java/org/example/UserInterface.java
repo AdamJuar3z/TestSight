@@ -6,6 +6,11 @@ import java.util.Scanner;
 
 public class UserInterface {
     Dealership dealership;
+
+    //So technically the UserInterface can create its own dealership in a private init method
+    //The reason for that is that way you're forcing the other programmers ot use the
+    //DealershipFileManager as opposed to just making their own dealership.
+    //But this gets the job done!
     public UserInterface(Dealership dealership) {
         this.dealership = dealership;
     }

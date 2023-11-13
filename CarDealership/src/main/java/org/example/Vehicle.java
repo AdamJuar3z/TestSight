@@ -90,14 +90,8 @@ public class Vehicle {
     }
     @Override
     public String toString() {
-        return "VIN: " + vin +
-                ", Year: " + year +
-                ", Make: " + make +
-                ", Model: " + model +
-                ", Type: " + vehicleType +
-                ", Color: " + color +
-                ", Odometer: " + odometer +
-                ", Price: " + price;
+
+        return String.format("%d|%d|%s|%s|%s|%s|%d|%.1f",
+                vin, year, make, model, vehicleType, color, odometer, price);
     }
 }
-

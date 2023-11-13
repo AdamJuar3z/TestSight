@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.io.FileNotFoundException;
 
 public class DealershipFileManager {
     private static final String VEHICLE_PATH = "src/main/resources/Vehicle_Inventory.csv";
@@ -46,5 +47,27 @@ public class DealershipFileManager {
         }
 
         return dealership;
+    }
+
+    public static void saveDealership(Dealership dealership) {
+
+        try {
+            FileWriter writer = new FileWriter("src/main/resources/Vehicle_Inventory.csv", false);
+            for (Vehicle vehicle : dealership.getAllVehicles()) {
+                String csvLine = vehicle.getVin() + "|" +
+                        vehicle.getYear() + "|" +
+                        vehicle.getMake() + "|" +
+                        vehicle.getModel() + "|" +
+                        vehicle.getColor() + "|" +
+                        vehicle.getVehicleType() + "|" +
+                        vehicle.getOdometer() + "|" +
+                        vehicle.getPrice();
+                writer.write(csvLine + System.lineSeparator());
+            }
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Error writing to the file.");
+        }
     }
 }

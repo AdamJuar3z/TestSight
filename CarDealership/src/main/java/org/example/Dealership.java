@@ -3,6 +3,7 @@ package org.example;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Dealership {
     private String name;
@@ -46,63 +47,28 @@ public class Dealership {
     }
 
     public List<Vehicle> getVehicleByPrice(double min, double max) {
-        List<Vehicle> filteredVehicles = new ArrayList<>();
-        for (Vehicle vehicle : inventory) {
-            if (vehicle.getPrice() >= min && vehicle.getPrice() <= max) {
-                filteredVehicles.add(vehicle);
-            }
-        }
-        return filteredVehicles;
+       return inventory.stream().filter(vehicle -> vehicle.getPrice() <= max).toList();
     }
 
     public List<Vehicle> getVehicleByMakeModel(String make, String model) {
-        List<Vehicle> filteredVehicles = new ArrayList<>();
-        for (Vehicle vehicle : inventory) {
-            if (vehicle.getMake().equalsIgnoreCase(make) && vehicle.getModel().equalsIgnoreCase(model)) {
-                filteredVehicles.add(vehicle);
-            }
-        }
-        return filteredVehicles;
+        return inventory.stream().filter(vehicle -> vehicle.getMake().equalsIgnoreCase(make) && vehicle.getModel()
+                .equalsIgnoreCase(model)).collect(Collectors.toList());
     }
-
     public List<Vehicle> getVehicleByYear(int min, int max) {
-        List<Vehicle> filteredVehicles = new ArrayList<>();
-        for (Vehicle vehicle : inventory) {
-            if (vehicle.getYear() >= min && vehicle.getYear() <= max) {
-                filteredVehicles.add(vehicle);
-            }
-        }
-        return filteredVehicles;
+        return inventory.stream().filter(vehicle -> vehicle.getYear() >= min && vehicle.getYear() <= max).toList();
     }
 
     public List<Vehicle> getVehicleByColor(String color) {
-        List<Vehicle> filteredVehicles = new ArrayList<>();
-        for (Vehicle vehicle : inventory) {
-            if (vehicle.getColor().equalsIgnoreCase(color)) {
-                filteredVehicles.add(vehicle);
-            }
-        }
-        return filteredVehicles;
+       return inventory.stream().filter(vehicle -> vehicle.getColor().equalsIgnoreCase(color)).toList();
     }
 
     public List<Vehicle> getVehicleByMileage(double min, double max) {
-        List<Vehicle> filteredVehicles = new ArrayList<>();
-        for (Vehicle vehicle : inventory) {
-            if (vehicle.getOdometer() >= min && vehicle.getOdometer() <= max) {
-                filteredVehicles.add(vehicle);
-            }
-        }
-        return filteredVehicles;
+        return inventory.stream().filter(vehicle -> vehicle.getOdometer() >= min && vehicle.getOdometer() <= max).toList();
+
     }
 
     public List<Vehicle> getVehicleByType(String vehicleType) {
-        List<Vehicle> filteredVehicles = new ArrayList<>();
-        for (Vehicle vehicle : inventory) {
-            if (vehicle.getVehicleType().equalsIgnoreCase(vehicleType)) {
-                filteredVehicles.add(vehicle);
-            }
-        }
-        return filteredVehicles;
+      return inventory.stream().filter(vehicle -> vehicle.getVehicleType().equalsIgnoreCase(vehicleType)).toList();
     }
 
     public List<Vehicle> getAllVehicles() {

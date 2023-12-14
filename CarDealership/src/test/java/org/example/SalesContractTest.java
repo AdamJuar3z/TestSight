@@ -1,3 +1,4 @@
+/*
 package org.example;
 
 import org.junit.jupiter.api.Test;
@@ -6,10 +7,10 @@ import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SalesContractTest {}
- /*   //Arrange
-    @Test*/
- /*   public void test_GetTotal_Price(){
+class SalesContractTest {
+//    //Arrange
+   @Test
+    public void test_GetTotal_Price(){
         SalesContract salesContract = new SalesContract("10/22/20", "Diana",
                 new Vehicle(10234, 2020, "Ford", "Bronco", "SUV", "Black",
                         100, 10000), "@yahoo.com", true);
@@ -66,4 +67,4 @@ class SalesContractTest {}
     //Act
     //Assert
 
-}*/
+*/

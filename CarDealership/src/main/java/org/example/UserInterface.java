@@ -9,6 +9,17 @@ import java.util.List;
 import java.util.Scanner;
 
 public class UserInterface {
+    String RESET = "\u001B[0m";
+     String RED = "\u001B[31m";
+     String GREEN = "\u001B[32m";
+     String YELLOW = "\u001B[33m";
+    String BLUE = "\u001B[34m";
+
+    public static final String PURPLE = "\u001B[35m";
+    public static final String CYAN = "\u001B[36m";
+    public static final String WHITE = "\u001B[37m";
+
+
     static Dealership dealership;
     private static final String FILE_PATH = "src/main/resources/Vehicle_Inventory.csv";
 
@@ -21,7 +32,7 @@ public class UserInterface {
         boolean isMakingSelection = true;
 
         while (isMakingSelection) {
-            System.out.println("Welcome to Puros precios Locos Dealership!\n Choose an option below:\n");
+            System.out.println(RED+ "Welcome to Puros precios Locos Dealership!\n Choose an option below:\n"+ RESET);
             System.out.println("1 - Find vehicles within a price range.");
             System.out.println("2 - Find vehicles by make/model.");
             System.out.println("3 - Find vehicles by year range.");
